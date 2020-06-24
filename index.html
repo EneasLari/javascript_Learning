@@ -15,18 +15,31 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 
 <p id="demo">Let AJAX change this text.</p>
 
-<button type="button" onclick="loadDoc()">Change Content</button>
+<button type="button" onclick="callFunctionOnGetResponse('GET','loadDoc')">Change Content(Callback)</button>
 
+
+<!-- Using a Callback Function
+A callback function is a function passed as a parameter to another function.
+
+If you have more than one AJAX task in a website, you should create one function for executing the XMLHttpRequest object, and one callback function for each AJAX task.
+
+The function call should contain the URL and what function to call when the response is ready. -->
 <script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+
+function callFunctionOnGetResponse(url, cFunction){
+    var xhttp=new XMLHttpRequest();
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
+      cFunction(this);
     }
   };
-  xhttp.open("GET", "https://testnodeeneas.herokuapp.com/test", true);
+  xhttp.open("GET", url, true);
   xhttp.send();
+}
+    
+function loadDoc(xhttp) {
+    document.getElementById("demo").innerHTML = this.responseText;
 }
 
 function sendFormData(datatobesend){
