@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var path = require('path');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Enitopia' });
@@ -19,8 +19,8 @@ router.get('/test', function(req, res, next) {
   // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', false);
   // Pass to next layer of middleware
-  res.send("TEXTTXTXT");
- // res.sendFile('public/filetosend.txt');
+  //res.send("TEXTTXTXT");
+  res.sendFile(path.join(__dirname, '../public', 'filetosend.txt'));
 });
 
 module.exports = router;
