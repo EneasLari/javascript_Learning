@@ -10,7 +10,7 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Javascript Request Demos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -24,13 +24,20 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 
 <h1>The XMLHttpRequest Object is being tested here!</h1>
 
-<div id="demo">
+<div>
     Let AJAX change this text.
     <p></p>
     
-    <button type="button" onclick="callFunctionOnGetResponse('https://testnodeeneas.herokuapp.com/fileload',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
+    <div class="container"  id="demo">
+        <button type="button" class="btn btn-success" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/fileload',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
+    </div>
     <p></p>
-    <button type="button" onclick='FetchContentFromFile()'>FETCH CONTENT(AXIOS)</button>
+    <div class="container"  id="demo2">
+        <button type="button" class="btn btn-success"onclick='FetchContentFromFileWithAxios()'>FETCH CONTENT(AXIOS)</button>
+    </div>
+    
+    
+    
 </div>
 
 
@@ -44,7 +51,7 @@ If you have more than one AJAX task in a website, you should create one function
 The function call should contain the URL and what function to call when the response is ready. -->
 <script>
 
-function callFunctionOnGetResponse(url, cFunction){
+function FetchContentFromFileWithXMLHttpRequest(url, cFunction){
     var xhttp=new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -59,10 +66,10 @@ function loadDoc(axhttp) {
     document.getElementById("demo").innerHTML =axhttp.responseText;
 }
 
-const FetchContentFromFile = () => {
+const FetchContentFromFileWithAxios = () => {
     axios.get('https://testnodeeneas.herokuapp.com/fileload')
         .then(response => {
-            document.getElementById("demo").innerHTML = response.data;
+            document.getElementById("demo2").innerHTML = response.data;
         })
         .catch(error => console.error(error));
 };
