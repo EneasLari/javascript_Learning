@@ -27,7 +27,7 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 <div>
     <div class="container-fluid text-center">
         <h1>AJAX is being tested here!</h1>
-        Let AJAX change these buttons to other elements!.
+        Let AJAX change these buttons to other elements. We fetch from server files and we render them as html elements.
         <p></p>
     </div>
 
@@ -35,12 +35,21 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
     <div class="container"  id="demo">
         <button type="button" class="btn btn-dark btn-block" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/table',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
     </div>
+
     <p></p>
     <div class="container"  id="demo2">
         <button type="button" class="btn btn-dark btn-block"onclick='FetchContentFromFileWithAxios()'>FETCH CONTENT(AXIOS)</button>
     </div>
+
     
-    
+    <div class="container">
+        <h1>Some Dome Manipulations</h1>
+    </div>
+
+    <p></p>
+    <div class="container"  id="demo3">
+        <button type="button" class="btn btn-dark btn-block"onclick='elementManipulation()'>Change</button>
+    </div>
     
 </div>
 
@@ -88,6 +97,11 @@ function sendFormData(datatobesend){
     };
     xhttp.open("POST", "https://testnodeeneas.herokuapp.com/test", true);
     xhttp.send();
+}
+
+function elementManipulation(){
+
+    document.getElementById("demo3").innerHTML="<p>POUTSES</p>"
 }
 
 </script>
