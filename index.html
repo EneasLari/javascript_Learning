@@ -29,7 +29,7 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
     <p></p>
     
     <div class="container"  id="demo">
-        <button type="button" class="btn btn-success" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/fileload',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
+        <button type="button" class="btn btn-success" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/table',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
     </div>
     <p></p>
     <div class="container"  id="demo2">
@@ -67,7 +67,7 @@ function loadDoc(axhttp) {
 }
 
 const FetchContentFromFileWithAxios = () => {
-    axios.get('https://testnodeeneas.herokuapp.com/fileload')
+    axios.get('https://testnodeeneas.herokuapp.com/stackedform')
         .then(response => {
             document.getElementById("demo2").innerHTML = response.data;
         })
