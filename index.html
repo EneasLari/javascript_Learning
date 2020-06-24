@@ -17,6 +17,8 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- Install axios with CDN -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -52,6 +54,16 @@ function callFunctionOnGetResponse(url, cFunction){
 function loadDoc(axhttp) {
     document.getElementById("demo").innerHTML =axhttp.responseText;
 }
+
+const fetchUsers = () => {
+    axios.get('https://testnodeeneas.herokuapp.com/test')
+        .then(response => {
+            document.getElementById("demo").innerHTM = response.data.data;
+        })
+        .catch(error => console.error(error));
+};
+
+fetchUsers();
 
 function sendFormData(datatobesend){
     var xhttp=new XMLHttpRequest();
