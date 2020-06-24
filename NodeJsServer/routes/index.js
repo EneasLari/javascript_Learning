@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 
 /* GET home page. */
-router.get('test/receivefile', function(req, res, next) {
+router.get('/test', function(req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://eneaslari.github.io')
   // Request methods you wish to allow
