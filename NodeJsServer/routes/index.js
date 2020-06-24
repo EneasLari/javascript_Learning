@@ -19,7 +19,8 @@ router.get('/test', function(req, res, next) {
   // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', false);
   // Pass to next layer of middleware
-  res.sendFile('public/filetosend.txt');
+  res.send("TEXTTXTXT");
+ // res.sendFile('public/filetosend.txt');
 });
 
 module.exports = router;
