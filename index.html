@@ -38,6 +38,7 @@ function callFunctionOnGetResponse(url, cFunction){
 }
     
 function loadDoc(axhttp) {
+    console.log(axhttp.responseText);
     document.getElementById("demo").innerHTML =axhttp.responseText;
 }
 
