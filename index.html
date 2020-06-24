@@ -58,7 +58,7 @@ function loadDoc(axhttp) {
 const fetchUsers = () => {
     axios.get('https://testnodeeneas.herokuapp.com/fileload')
         .then(response => {
-            document.getElementById("demo").innerHTM = response.data.data;
+            document.getElementById("demo").innerHTM = response.data;
         })
         .catch(error => console.error(error));
 };
