@@ -3,12 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Enitopia' });
 });
 
 
 /* GET home page. */
-router.get('/test', function(req, res, next) {
+router.get('test/receivefile', function(req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://eneaslari.github.io')
   // Request methods you wish to allow
@@ -19,7 +19,7 @@ router.get('/test', function(req, res, next) {
   // to the API (e.g. in case you use sessions)
   res.setHeader('Access-Control-Allow-Credentials', false);
   // Pass to next layer of middleware
-  res.send('WE ARE OK MOTHERFUCKER! ASTA LA VISTA BABY');
+  res.sendFile('public/img/filetosend.txt');
 });
 
 module.exports = router;

@@ -1,3 +1,12 @@
+<!--Access Across Domains
+For security reasons, modern browsers do not allow access across domains.
+
+This means that both the web page and the XML file it tries to load, must be located on the same server.
+
+The examples on W3Schools all open XML files located on the W3Schools domain.
+
+If you want to use the example above on one of your own web pages, the XML files you load must be located on your own server BUT
+I have made a server in directory NodeJsServer wich Allows http requests from the front end server(githubpages)-->
 <!DOCTYPE html>
 <html>
 <body>
@@ -16,9 +25,21 @@ function loadDoc() {
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "https://testnodeeneas.herokuapp.com/test", true);
+  xhttp.open("GET", "https://testnodeeneas.herokuapp.com/test/receivefile", true);
   xhttp.send();
 }
+
+function sendFormData(datatobesend){
+    var xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200){
+            document.getElementById("demo2").innerHTML=this.responseText;
+        }
+    };
+    xhttp.open("POST", "https://testnodeeneas.herokuapp.com/test", true);
+    xhttp.send();
+}
+
 </script>
 
 </body>
