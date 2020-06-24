@@ -59,7 +59,7 @@ const fetchUsers = () => {
     axios.get('https://testnodeeneas.herokuapp.com/fileload')
         .then(response => {
             console.log( response.data);
-            document.getElementById("demo").innerHTM = response.data;
+            document.getElementById("demo").innerHTML = response.data;
         })
         .catch(error => console.error(error));
 };
