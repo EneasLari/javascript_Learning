@@ -22,9 +22,12 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 
 <h1>The XMLHttpRequest Object is being tested here!</h1>
 
-<div id="demo">Let AJAX change this text.</div>
+<div id="demo">
+    Let AJAX change this text.
+    <button type="button" onclick="callFunctionOnGetResponse('https://testnodeeneas.herokuapp.com/fileload',loadDoc)">Change Content(Callback)</button>
+</div>
 
-<button type="button" onclick="callFunctionOnGetResponse('https://testnodeeneas.herokuapp.com/fileload',loadDoc)">Change Content(Callback)</button>
+
 
 
 <!-- Using a Callback Function
