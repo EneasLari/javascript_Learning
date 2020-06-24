@@ -28,18 +28,17 @@ The function call should contain the URL and what function to call when the resp
 
 function callFunctionOnGetResponse(url, cFunction){
     var xhttp=new XMLHttpRequest();
-    xhttp=new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      cFunction(this);
+      cFunction(xhttp);
     }
   };
   xhttp.open("GET", url, true);
   xhttp.send();
 }
     
-function loadDoc(xhttp) {
-    document.getElementById("demo").innerHTML = this.responseText;
+function loadDoc(axhttp) {
+    document.getElementById("demo").innerHTML =axhttp.responseText;
 }
 
 function sendFormData(datatobesend){
