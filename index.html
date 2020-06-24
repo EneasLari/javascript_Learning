@@ -22,18 +22,22 @@ I have made a server in directory NodeJsServer wich Allows http requests from th
 </head>
 <body>
 
-<h1>The XMLHttpRequest Object is being tested here!</h1>
+
 
 <div>
-    Let AJAX change this text.
-    <p></p>
+    <div class="container-fluid text-center">
+        <h1>AJAX is being tested here!</h1>
+        Let AJAX change these buttons to other elements!.
+        <p></p>
+    </div>
+
     
     <div class="container"  id="demo">
-        <button type="button" class="btn btn-success" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/table',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
+        <button type="button" class="btn btn-dark btn-block" onclick="FetchContentFromFileWithXMLHttpRequest('https://testnodeeneas.herokuapp.com/table',loadDoc)">FETCH CONTENT(XMLHttpRequest)</button>
     </div>
     <p></p>
     <div class="container"  id="demo2">
-        <button type="button" class="btn btn-success"onclick='FetchContentFromFileWithAxios()'>FETCH CONTENT(AXIOS)</button>
+        <button type="button" class="btn btn-dark btn-block"onclick='FetchContentFromFileWithAxios()'>FETCH CONTENT(AXIOS)</button>
     </div>
     
     
